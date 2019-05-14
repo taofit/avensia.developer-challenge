@@ -15,6 +15,8 @@ You'll find instructions for each challenge in its folder's README file.
  
  Best of luck!
  
+ When your done pls email us back and let us know that you are ready!
+ 
  The team at Avensia
 
 
