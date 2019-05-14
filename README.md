@@ -33,3 +33,8 @@ You'll find instructions for each challenge in its folder's README file.
     $ git clone https://github.com/your_username/frontend-evaluation.git
     ```
 1. Follow the instructions in selected challenge
+
+
+## Submission
+1. Send us a link to your forked repository with commits pushed.
+_No need for a pull request to our repository_
