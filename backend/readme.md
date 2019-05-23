@@ -10,7 +10,7 @@ Please keep in mind that the reason for the task is not only the end result but 
 
 ## Task
 
-Included in this package you have `products.json` which is an list of products that the application should read. Currently the functionality of this application is very limited, and it needs to be extended.
+Included in this package you have `products.json` which is a list of products that the application should read. Currently the functionality of this application is very limited, and it needs to be extended.
 
 ### Some assumptions that can be made
 
