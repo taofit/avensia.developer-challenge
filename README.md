@@ -1,21 +1,21 @@
 # Welcome
-... To Avensia's developer challenge. 
+... To Avensias developer challenge. 
 
-Congratulations, you have proceeded to the next step which is to conclude a competence orientated challenge. We wish to take a closer look at your technical skills so this is your time to shine. If there is anything in it that might not be part of you skill set, its fine, just leave that part and focus on the other stuff. But do please make sure that you follow the instructions.
+Congratulations, you have proceeded to the next step which is to complete a competence orientated programming challenge. We wish to take a closer look at your technical skills and this is your time to shine. If there is anything in the challenge that might not be part of you skill set, that's fine, just leave that part and focus on the other stuff. But please make sure to follow the instructions closely.
 
-If it all looks intriguing I will set you up with a technical interview with one of our developers over Skype. 
-Here you have all the instruction you need:
+If it all looks intriguing we will set you up with a technical interview with one of our developers over Skype. 
+Here you have all the instructions you need:
 
-In this repository you'll find a backend & a frontend task. You may select whichever you wish, or do them both if you would prefer that.
+In this repository you'll find a backend & a frontend task. You may select whichever you wish, or do them both if that is what you prefer.
 
-You'll find instructions for each challenge in its folder's README file.
+You'll find instructions for each challenge in the README file in the challenge's respective folder.
 
  - [Backend](/backend)
  - [Frontend](/frontend)
  
  Best of luck!
  
- When your done pls email us back and let us know that you are ready!
+ When you're done please email us back and let us know that you're ready!
  
  The team at Avensia
 
