@@ -8,6 +8,7 @@ You'll find instructions for each challenge in the README file in the challenge'
 
 - [Frontend](/frontend)
 - [Backend](/backend)
+- [inRiver](/inriver)
  
 When you're done please email us and let us know that you're ready!
 

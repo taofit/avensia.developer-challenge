@@ -14,11 +14,15 @@ namespace Avensia.inRiver.Developertest.Helpers
 
             if (mimeType.StartsWith("image/"))
             {
-                resourceEntity.GetField("ResourceMedia").Data = "Image";
+                resourceEntity.GetField("ResourceMedia").Data = "image";
             }
             else if (mimeType == "application/pdf")
             {
-                resourceEntity.GetField("ResourceType").Data = "Document";
+                resourceEntity.GetField("ResourceType").Data = "PDF";
+            }
+            else if (mimeType == "video/")
+            {
+                resourceEntity.GetField("ResourceType").Data = "video";
             }
 
             context.ExtensionManager.DataService.UpdateEntity(resourceEntity);
