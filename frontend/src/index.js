@@ -7,6 +7,7 @@
  * To transpile you just need to type `$ npm start` or `$ yarn start`. This
  * will start the mocked API server and bundling.
  */
+import AppMe from './linksMe';
 
 const container = document.createElement('div');
 document.body.appendChild(container);
@@ -26,6 +27,7 @@ fetch('http://localhost:8181/products')
     container.innerText = "It's working!\n\n";
     container.innerText += 'Found sample products:\n';
     products.forEach(product => (container.innerText += `- ${product.title}\n`));
+    container.innerText += AppMe;
   })
   .catch(error => {
     container.innerText = `Error: ${error}`;
