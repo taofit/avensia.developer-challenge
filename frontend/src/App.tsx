@@ -1,4 +1,7 @@
 import { useQuery } from 'react-query';
+import Grid from '@material-ui/core/Grid';
+import { Wrapper } from './Item/Item.styles';
+import Item from './Item/Item';
 
 const itemList: Array<string> = [];
 let list = '';
@@ -28,7 +31,7 @@ const App = () => {
   const { data, isLoading, error } = useQuery<ProductType[]>('products', getProducts);
 
   const getTotalItems = () => null;
-  const handleAddToCart = () => null;
+  const handleAddToCart = (selectedItem: ProductType) => null;
   const handleRemoveFromCart = () => null;
 
   if (error) {
@@ -36,12 +39,16 @@ const App = () => {
   }
 
   return (
-    <div className="App">
-     start
-      <ul>
-        {data && data.map(item => (<li key={item.id}>{item.title}</li>))}
-      </ul>
-    </div>
+      <Wrapper>
+        <Grid container spacing={4}>
+          {data?.map(item => (
+              <Grid item key={item.id} grid-xs-10 sm={5}>
+                <Item item={item} handleAddToCart={handleAddToCart} />
+              </Grid>
+          ))}
+        </Grid>
+      </Wrapper>
+
   );
 }
 

@@ -2,22 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24a44bf7-ad75-42de-ad36-1809c6434062" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WIREFRAME.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/linksMe.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/node.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/yarn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wireframe.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.cmd" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Item/Item.styles.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Item/Item.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,10 +37,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.google.cloudcode.ide_session_index" value="20210509_0008" />
+    <property name="com.google.cloudcode.ide_session_index" value="20210509_0010" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -79,7 +72,8 @@
       <option name="presentableId" value="Default" />
       <updated>1620559151198</updated>
       <workItem from="1620559152664" duration="18989000" />
-      <workItem from="1620590952206" duration="398000" />
+      <workItem from="1620590952206" duration="668000" />
+      <workItem from="1620591643235" duration="4475000" />
     </task>
     <servers />
   </component>
@@ -111,10 +105,10 @@
       <screen x="-106" y="-1055" width="1920" height="1055" />
     </state>
     <state x="393" y="-896" key="SettingsEditor/-106.-1055.1920.1055/63.25.1617.1025@-106.-1055.1920.1055" timestamp="1620571137365" />
-    <state x="535" y="-861" width="866" height="617" key="find.popup" timestamp="1620590958429">
+    <state x="535" y="-861" width="866" height="617" key="find.popup" timestamp="1620593429071">
       <screen x="-106" y="-1055" width="1920" height="1055" />
     </state>
-    <state x="535" y="-861" width="866" height="617" key="find.popup/-106.-1055.1920.1055/63.25.1617.1025@-106.-1055.1920.1055" timestamp="1620590958429" />
+    <state x="535" y="-861" width="866" height="617" key="find.popup/-106.-1055.1920.1055/63.25.1617.1025@-106.-1055.1920.1055" timestamp="1620593429071" />
     <state x="526" y="-823" width="670" height="676" key="search.everywhere.popup" timestamp="1620566804134">
       <screen x="-106" y="-1055" width="1920" height="1055" />
     </state>
