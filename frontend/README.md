@@ -1,75 +1,46 @@
-# Avensia frontend challenge
+# Getting Started with Create React App
 
-The goal with this challenge is to determine your skill level and strengths as a **frontend developer**. The repository contains all the information you need to fulfill your assignment. Take your time and read through the whole document before you proceed. If you have any questions don't hesitate to reach out to us.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Table of contents
+## Available Scripts
 
-* [Gettings started](#getting-started)
-* [Setup](#setup)
-* [Assignment](#assignment)
-* [Requirements](#requirements)
-* [Submitting](#submitting)
+In the project directory, you can run:
 
-## Getting started
+### `yarn start`
 
-1.  Login to [Github](https://github.com/)
-1.  Fork this repository (click the Fork button on the upper right-hand side of the page)
-1.  Open your terminal and clone the fork to your computer *
-    ```bash
-    $ git clone https://github.com/<your_username>/avensia.developer-challenge
-    ```
-    _* You need to have [Git](https://git-scm.com/downloads) installed on your computer_
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Setup
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-1. Install packages
+### `yarn test`
 
-    Navigate to the folder of your clone and run
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-    ```bash
-    $ yarn install
-    ```
+### `yarn build`
 
-1. Start servers
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-    ```bash
-    $ yarn start
-    ```
-    
-    This will start [Parcel](https://parceljs.org/) at http://localhost:1234 which runs your application and a mocked API server at http://localhost:8181.
-    
-## Assignment
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-Your assignment is to create a **shopping cart** - an important component in every e-commerce solution that allows visitors to select items for purchase. 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-The [API Server](https://github.com/avensia/api-sample-server) is a backend with endpoint for getting products & managing your cart, which we expect you to use. Please read [the documentation](https://github.com/avensia/api-sample-server).
+### `yarn eject`
 
-We expect you to use [React](https://reactjs.org/) in your solution. In addition, you're encouraged to use TypeScript and CSS-in-JS which are both a part of our frontend tech stack. 
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-We also encourage you to explain your thoughts on technical decisions you make, either through a text document or through git commit messages.
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-You're free to focus on whatever aspect you wish. A visually beautiful solution can be just as impressive as a technically beautiful solution – you decide which of your strengths you want to display.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-## Requirements
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-These requirements are the basics of a shopping cart. If you have limited amount of time for this assignment, you can complete those that fit your time frame.
+## Learn More
 
-Required
-* As a user I can **see the image & name of each item** in my shopping cart
-* As a user I can **add an item** to my shopping cart
-* As a user I can **remove an item** from my shopping cart
-* As a user I can **see the total cost** of my shopping cart
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Optional
-* As a user I can **increment and decrement the quantity of an item** in my shopping cart
-
-[See wireframe example](WIREFRAME.md). _You are not required to follow the wireframe. Its purpose is to clarify what it could be._
-
-## Submitting
-
-When you feel ready to submit your work: Push your commits and send us the link to your fork at Github (_No need for a pull request to our repository_). Then we'll book a time for a review with your contact at Avensia and one of our frontend developers.
-
-If you have any question, don't hesitate to contact us.
-
-Good luck!
-
+To learn React, check out the [React documentation](https://reactjs.org/).
