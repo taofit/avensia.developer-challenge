@@ -1,7 +1,9 @@
 import { useQuery } from 'react-query';
 import Grid from '@material-ui/core/Grid';
-import { Wrapper } from './Item/Item.styles';
+import { Drawer } from "@material-ui/core";
+import { GlobWrapper, CartButton } from './styles';
 import Item from './Item/Item';
+import {useState} from "react";
 
 const itemList: Array<string> = [];
 let list = '';
@@ -28,6 +30,8 @@ const getProducts = async (): Promise<ProductType[]> => {
 }
 
 const App = () => {
+  const [cartOpen, setCartOpen] = useState(false);
+  const [cartItems, setCartItems] = useState<ProductType[]>([]);
   const { data, isLoading, error } = useQuery<ProductType[]>('products', getProducts);
 
   const getTotalItems = () => null;
@@ -39,15 +43,19 @@ const App = () => {
   }
 
   return (
-      <Wrapper>
+      <GlobWrapper>
+        <Drawer anchor='top' open={cartOpen} onClose={() => setCartOpen(false)}>
+          Cart
+        </Drawer>
+        <CartButton onClick={() => setCartOpen(true)}>Open cart</CartButton>
         <Grid container spacing={4}>
           {data?.map(item => (
-              <Grid item key={item.id} grid-xs-10 sm={5}>
+              <Grid item key={item.id} xs={12} sm={4}>
                 <Item item={item} handleAddToCart={handleAddToCart} />
               </Grid>
           ))}
         </Grid>
-      </Wrapper>
+      </GlobWrapper>
 
   );
 }

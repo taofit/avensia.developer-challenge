@@ -1,6 +1,6 @@
 import Button from "@material-ui/core/Button";
 import { ProductType } from "../App";
-import { Wrapper } from "./Item.styles";
+import { Wrapper } from "../styles";
 
 type Props = {
     item: ProductType;
@@ -12,7 +12,9 @@ const Item: React.FC<Props> = ({item, handleAddToCart}) => (
         <img src={item.imageUrl} alt={item.title}/>
         <div>
             <h4>{item.title}</h4>
-            <p>{item.prices[0].currency} {item.prices[0].amount}</p>
+            {
+                item.prices.map(price => <p key={price.currency}>{price.currency} {price.amount}</p>)
+            }
         </div>
         <Button onClick={() => handleAddToCart(item)}>Add to cart</Button>
     </Wrapper>
