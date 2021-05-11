@@ -29,10 +29,23 @@ export const Wrapper = styled.div`
 
 export const GlobWrapper = styled.div`
     margin: 30px;
+    #wrapperGrid {
+        margin-top: 10px;
+    }
+`;
+
+export const CartWrapper = styled.aside`
+    font-family: Helvetica;
+    width: 450px;
+    padding: 23px;
+`;
+
+export const CartItemWrapper = styled.div`
+    
 `;
 
 export const CartButton = styled(IconButton)`
-    position: fixed:
+    position: fixed;
     z-index: 1000;
     left: 15px; 
     top: 15px; 
