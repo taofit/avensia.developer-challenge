@@ -41,7 +41,24 @@ export const CartWrapper = styled.aside`
 `;
 
 export const CartItemWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    border-bottom: 1px solid lightGrey;
     
+    .itemDetail, .itemButton {
+        display: flex;
+        justify-content: space-between;
+        Button {
+            background-color: lightGrey;
+        }
+    }
+    div {
+        flex: 1 0
+    }
+    img {
+        max-width: 100px;
+    }
 `;
 
 export const CartButton = styled(IconButton)`

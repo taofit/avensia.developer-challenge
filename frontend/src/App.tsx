@@ -19,6 +19,11 @@ type Price = {
   currency: string; // Currently SEK and EUR
 };
 
+export type ItemType = {
+    product: ProductType;
+    quantity: number;
+}
+
 const getProducts = async (): Promise<ProductType[]> => {
   let response = await fetch('http://localhost:8181/products');
   if (!response.ok) {
@@ -29,12 +34,22 @@ const getProducts = async (): Promise<ProductType[]> => {
 
 const App = () => {
   const [cartOpen, setCartOpen] = useState(false);
-  const [cartItems, setCartItems] = useState<ProductType[]>([]);
+  const [cartItems, setCartItems] = useState<ItemType[]>([]);
   const { data, isLoading, error } = useQuery<ProductType[]>('products', getProducts);
 
-  const getTotalItems = (items: ProductType[]) => items.length;
-  const handleAddToCart = (selectedItem: ProductType) => null;
-  const handleRemoveFromCart = () => null;
+  const getTotalItems = (items: ItemType[]) => items.reduce((accu: number, item) => accu + item.quantity, 0);
+  const addItemToCart = (selectedProduct: ProductType) => {
+    setCartItems(preItems => {
+        const itemExits = preItems.find(item => item.product.id === selectedProduct.id);
+        if (itemExits) {
+            return preItems.map(item => item.product.id === selectedProduct.id ? {...item, quantity: item.quantity + 1} : item);
+        }
+        const selectedItem = {product: selectedProduct, quantity: 1};
+        return [...preItems, selectedItem];
+    });
+    console.log(cartItems);
+  };
+  const removeItemFromCart = () => null;
 
   if (error) {
     return (<div>OBS error occured</div>);
@@ -42,14 +57,14 @@ const App = () => {
 
   return (
       <GlobWrapper>
-        <Drawer anchor='top' open={cartOpen} onClose={() => setCartOpen(false)}>
-          <Cart items={cartItems} addItem={handleAddToCart} removeItem={handleRemoveFromCart}/>
+        <Drawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)}>
+          <Cart items={cartItems} addItem={addItemToCart} removeItem={removeItemFromCart} />
         </Drawer>
         <CartButton onClick={() => setCartOpen(true)}>Open cart</CartButton>
         <Grid container spacing={4} id='wrapperGrid'>
           {data?.map(item => (
               <Grid item key={item.id} xs={12} sm={4}>
-                <Item item={item} handleAddToCart={handleAddToCart} />
+                <Item item={item} addItemToCart={addItemToCart} />
               </Grid>
           ))}
         </Grid>

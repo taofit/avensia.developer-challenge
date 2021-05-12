@@ -4,10 +4,10 @@ import { Wrapper } from "../styles";
 
 type Props = {
     item: ProductType;
-    handleAddToCart: (selectedItem: ProductType) => null;
+    addItemToCart: (selectedItem: ProductType) => void;
 };
 
-const Item: React.FC<Props> = ({item, handleAddToCart}) => (
+const Item: React.FC<Props> = ({item, addItemToCart}) => (
     <Wrapper>
         <img src={item.imageUrl} alt={item.title}/>
         <div>
@@ -16,7 +16,7 @@ const Item: React.FC<Props> = ({item, handleAddToCart}) => (
                 item.prices.map(price => <p key={price.currency}>{price.currency} {price.amount}</p>)
             }
         </div>
-        <Button onClick={() => handleAddToCart(item)}>Add to cart</Button>
+        <Button onClick={() => addItemToCart(item)}>Add to cart</Button>
     </Wrapper>
 );
 
