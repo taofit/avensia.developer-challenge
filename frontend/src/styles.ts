@@ -34,17 +34,24 @@ export const GlobWrapper = styled.div`
     }
 `;
 
-export const CartWrapper = styled.aside`
+export const CartWrapper = styled.div`
     font-family: Helvetica;
-    width: 450px;
+    display: flex;
+    height: 500px;
     padding: 23px;
+    
+    div.cartSummary {
+        padding: 0 10px;
+        border-right: 2px solid lightGrey;
+    }
 `;
 
 export const CartItemWrapper = styled.div`
-    display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
+    margin: 0 15px;
+    padding: 0 15px;
     border-bottom: 1px solid lightGrey;
+    border-right: 1px solid lightGrey;
     
     .itemDetail, .itemButton {
         display: flex;
@@ -54,7 +61,7 @@ export const CartItemWrapper = styled.div`
         }
     }
     div {
-        flex: 1 0
+        flex: 1;
     }
     img {
         max-width: 100px;

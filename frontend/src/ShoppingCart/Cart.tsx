@@ -1,5 +1,5 @@
 import { CartWrapper, CartItemWrapper } from '../styles';
-import { ProductType, ItemType } from '../App';
+import { ProductType, ItemType, PriceType } from '../App';
 import Button from "@material-ui/core/Button";
 
 type Props = {
@@ -8,11 +8,37 @@ type Props = {
     removeItem: (id: number) => void;
 }
 
-let qty: {[id:number]: number};
+const getTotalPrice = (items: ItemType[]) => {
+    return items.reduce((accu: PriceType[], item) => {
+        const currProductPrice = item.product.prices.map(price => ({
+            amount: price.amount * item.quantity,
+            currency: price.currency
+        }));
+        if (accu.length === 0) {
+            accu = currProductPrice;
+        } else {
+            accu = accu.map(existEachPrice => {
+                let amount = existEachPrice.amount;
+                currProductPrice.forEach((currEachPrice) => {
+                    if (currEachPrice.currency === existEachPrice.currency) {
+                        amount += currEachPrice.amount;
+                    }
+                });
+
+                return {...existEachPrice, amount}
+            });
+        }
+        return accu;
+    }, [] as PriceType[]);
+}
 const Cart: React.FC<Props> = ({items, addItem, removeItem}) => {
     return (
         <CartWrapper>
-            <h3>Shopping Cart</h3>
+            <div className='cartSummary'>
+                <h3>Shopping Cart</h3>
+                <h4>Total:</h4>
+                {getTotalPrice(items).map(totalPrice => <p key={totalPrice.currency}>{totalPrice.currency}: {totalPrice.amount.toFixed(2)}</p>)}
+            </div>
             {items.length === 0 ? <p>Cart is empty.</p> : ''}
             {items.map((item: ItemType)=> (
                 <CartItemWrapper key={item.product.title}>
@@ -28,8 +54,9 @@ const Cart: React.FC<Props> = ({items, addItem, removeItem}) => {
                         <div>
                             Total:
                             {
-                                item.product.prices.map(price => <p key={price.currency}>{price.currency} {(price.amount * item.quantity).toFixed(2)}
-                                </p>)
+                                item.product.prices.map(price =>
+                                    <p key={price.currency}>{price.currency} {(price.amount * item.quantity).toFixed(2)}
+                                    </p>)
                             }
                         </div>
                     </div>

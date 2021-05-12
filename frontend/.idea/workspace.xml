@@ -4,9 +4,7 @@
     <list default="true" id="24a44bf7-ad75-42de-ad36-1809c6434062" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Item.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ShoppingCart/Cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShoppingCart/Cart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShoppingCart/CartItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShoppingCart/CartItem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +35,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.google.cloudcode.ide_session_index" value="20210512_0003" />
+    <property name="com.google.cloudcode.ide_session_index" value="20210512_0007" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -85,7 +83,8 @@
       <workItem from="1620591643235" duration="5080000" />
       <workItem from="1620676414128" duration="5922000" />
       <workItem from="1620743604806" duration="8252000" />
-      <workItem from="1620805071679" duration="9118000" />
+      <workItem from="1620805071679" duration="9465000" />
+      <workItem from="1620826121050" duration="11645000" />
     </task>
     <servers />
   </component>
@@ -117,10 +116,10 @@
       <screen x="-106" y="-1055" width="1920" height="1055" />
     </state>
     <state x="393" y="-896" key="SettingsEditor/-106.-1055.1920.1055/63.25.1617.1025@-106.-1055.1920.1055" timestamp="1620571137365" />
-    <state x="535" y="-861" width="866" height="617" key="find.popup" timestamp="1620811762398">
+    <state x="535" y="-861" width="866" height="617" key="find.popup" timestamp="1620837549158">
       <screen x="-106" y="-1055" width="1920" height="1055" />
     </state>
-    <state x="535" y="-861" width="866" height="617" key="find.popup/-106.-1055.1920.1055/63.25.1617.1025@-106.-1055.1920.1055" timestamp="1620811762398" />
+    <state x="535" y="-861" width="866" height="617" key="find.popup/-106.-1055.1920.1055/63.25.1617.1025@-106.-1055.1920.1055" timestamp="1620837549158" />
     <state x="526" y="-823" width="670" height="676" key="search.everywhere.popup" timestamp="1620566804134">
       <screen x="-106" y="-1055" width="1920" height="1055" />
     </state>

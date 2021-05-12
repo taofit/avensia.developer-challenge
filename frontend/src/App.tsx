@@ -10,11 +10,11 @@ export type ProductType = {
   id: number;
   imageUrl: string;
   title: string;
-  prices: Price[];
+  prices: PriceType[];
   url: string;
 };
 
-type Price = {
+export type PriceType = {
   amount: number;
   currency: string; // Currently SEK and EUR
 };
@@ -40,16 +40,32 @@ const App = () => {
   const getTotalItems = (items: ItemType[]) => items.reduce((accu: number, item) => accu + item.quantity, 0);
   const addItemToCart = (selectedProduct: ProductType) => {
     setCartItems(preItems => {
-        const itemExits = preItems.find(item => item.product.id === selectedProduct.id);
-        if (itemExits) {
+        const itemExists = preItems.find(item => item.product.id === selectedProduct.id);
+        if (itemExists) {
             return preItems.map(item => item.product.id === selectedProduct.id ? {...item, quantity: item.quantity + 1} : item);
         }
         const selectedItem = {product: selectedProduct, quantity: 1};
         return [...preItems, selectedItem];
     });
-    console.log(cartItems);
   };
-  const removeItemFromCart = () => null;
+  const removeItemFromCart = (id: number) => {
+      setCartItems(preItems => {
+        const itemExists = preItems.find(item => item.product.id === id);
+        if (!itemExists) {
+            // throw new Error(`item with id; ${id} does not exist in the cart`);
+            return preItems;
+        }
+
+        const cartItems = preItems.map(item => {
+            const quantity = item.quantity === 0 ? item.quantity : item.quantity - 1;
+            return item.product.id === id ? {...item, quantity} : item;
+        });
+
+        return cartItems.filter(item => {
+            return item.quantity > 0;
+        })
+      });
+  };
 
   if (error) {
     return (<div>OBS error occured</div>);
@@ -57,7 +73,7 @@ const App = () => {
 
   return (
       <GlobWrapper>
-        <Drawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)}>
+        <Drawer anchor='bottom' open={cartOpen} onClose={() => setCartOpen(false)}>
           <Cart items={cartItems} addItem={addItemToCart} removeItem={removeItemFromCart} />
         </Drawer>
         <CartButton onClick={() => setCartOpen(true)}>Open cart</CartButton>
