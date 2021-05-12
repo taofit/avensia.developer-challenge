@@ -1,5 +1,5 @@
 import Button from "@material-ui/core/Button";
-import { ProductType } from "../App";
+import { ProductType } from "../Types/types";
 import { Wrapper } from "../styles";
 
 type Props = {

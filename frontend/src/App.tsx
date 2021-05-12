@@ -1,28 +1,12 @@
 import { useQuery } from 'react-query';
 import Grid from '@material-ui/core/Grid';
 import { Drawer } from "@material-ui/core";
-import { GlobWrapper, CartButton } from './styles';
+import { GlobalWrapper, CartBadge } from './styles';
 import Item from './Item/Item';
 import {useState} from "react";
 import Cart from './ShoppingCart/Cart';
-
-export type ProductType = {
-  id: number;
-  imageUrl: string;
-  title: string;
-  prices: PriceType[];
-  url: string;
-};
-
-export type PriceType = {
-  amount: number;
-  currency: string; // Currently SEK and EUR
-};
-
-export type ItemType = {
-    product: ProductType;
-    quantity: number;
-}
+import { ProductType, ItemType } from "./Types/types";
+import ShoppingBasketTwoToneIcon from '@material-ui/icons/ShoppingBasketTwoTone';
 
 const getProducts = async (): Promise<ProductType[]> => {
   let response = await fetch('http://localhost:8181/products');
@@ -67,16 +51,22 @@ const App = () => {
       });
   };
 
+  const toggleDrawer = () => {
+      setCartOpen(!cartOpen);
+  }
+
   if (error) {
     return (<div>OBS error occured</div>);
   }
 
   return (
-      <GlobWrapper>
-        <Drawer anchor='bottom' open={cartOpen} onClose={() => setCartOpen(false)}>
+      <GlobalWrapper>
+        <Drawer anchor='bottom' open={cartOpen} onClose={() => toggleDrawer()}>
           <Cart items={cartItems} addItem={addItemToCart} removeItem={removeItemFromCart} />
         </Drawer>
-        <CartButton onClick={() => setCartOpen(true)}>Open cart</CartButton>
+        <CartBadge color="secondary" badgeContent={getTotalItems(cartItems)} onClick={() => toggleDrawer()} title='Open cart'>
+            <ShoppingBasketTwoToneIcon />{" "}
+        </CartBadge>
         <Grid container spacing={4} id='wrapperGrid'>
           {data?.map(item => (
               <Grid item key={item.id} xs={12} sm={4}>
@@ -84,7 +74,7 @@ const App = () => {
               </Grid>
           ))}
         </Grid>
-      </GlobWrapper>
+      </GlobalWrapper>
 
   );
 }

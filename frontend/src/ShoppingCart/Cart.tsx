@@ -1,5 +1,5 @@
 import { CartWrapper, CartItemWrapper } from '../styles';
-import { ProductType, ItemType, PriceType } from '../App';
+import { ProductType, ItemType, PriceType } from '../Types/types';
 import Button from "@material-ui/core/Button";
 
 type Props = {
@@ -25,21 +25,22 @@ const getTotalPrice = (items: ItemType[]) => {
                     }
                 });
 
-                return {...existEachPrice, amount}
+                return {...existEachPrice, amount};
             });
         }
         return accu;
     }, [] as PriceType[]);
 }
+
 const Cart: React.FC<Props> = ({items, addItem, removeItem}) => {
     return (
         <CartWrapper>
             <div className='cartSummary'>
-                <h3>Shopping Cart</h3>
-                <h4>Total:</h4>
+                <h2>Shopping Cart</h2>
+                {items.length > 0 ? <h4>Total:</h4> : null}
                 {getTotalPrice(items).map(totalPrice => <p key={totalPrice.currency}>{totalPrice.currency}: {totalPrice.amount.toFixed(2)}</p>)}
             </div>
-            {items.length === 0 ? <p>Cart is empty.</p> : ''}
+            {items.length === 0 ? <p className='emptyMsg'>Cart is empty.</p> : null}
             {items.map((item: ItemType)=> (
                 <CartItemWrapper key={item.product.title}>
                     <h4>{item.product.title}</h4>
@@ -61,9 +62,9 @@ const Cart: React.FC<Props> = ({items, addItem, removeItem}) => {
                         </div>
                     </div>
                     <div className='itemButton'>
-                        <Button size='small' disableElevation onClick={() => removeItem(item.product.id)}>-</Button>
+                        <Button size='small' onClick={() => removeItem(item.product.id)}>-</Button>
                         <span>{item.quantity}</span>
-                        <Button size='small' disableElevation onClick={() => addItem(item.product)}>+</Button>
+                        <Button size='small' onClick={() => addItem(item.product)}>+</Button>
                     </div>
                 </CartItemWrapper>
             ))}

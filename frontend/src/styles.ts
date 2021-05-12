@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
+import Badge from '@material-ui/core/Badge';
 
 export const Wrapper = styled.div`
     display: flex;
@@ -27,10 +28,13 @@ export const Wrapper = styled.div`
     }
 `;
 
-export const GlobWrapper = styled.div`
+export const GlobalWrapper = styled.div`
     margin: 30px;
     #wrapperGrid {
         margin-top: 10px;
+    }
+    Badge {
+        cursor: pointer;
     }
 `;
 
@@ -43,6 +47,11 @@ export const CartWrapper = styled.div`
     div.cartSummary {
         padding: 0 10px;
         border-right: 2px solid lightGrey;
+    }
+    p.emptyMsg {
+        margin: auto;
+        font-family: Helvetica;
+        font-size: 20px;
     }
 `;
 
@@ -68,9 +77,6 @@ export const CartItemWrapper = styled.div`
     }
 `;
 
-export const CartButton = styled(IconButton)`
-    position: fixed;
-    z-index: 1000;
-    left: 15px; 
-    top: 15px; 
-`;
+export const CartBadge = styled(Badge)`
+    cursor: pointer;
+`
