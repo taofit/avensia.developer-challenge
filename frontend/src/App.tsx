@@ -26,7 +26,7 @@ const App = () => {
     const addItemToCart = (selectedProduct: ProductType) => {
         const cartItemsPromise = postCartItems(selectedProduct.id);
         cartItemsPromise.then(response => {
-            let newCartItems: ItemType[] = [];
+            let newCartItems: ItemType[];
             const itemExists = cartItems.find(item => item.product.id === selectedProduct.id);
             if (itemExists) {
                 newCartItems = cartItems.map(item => item.product.id === selectedProduct.id ? {...item, quantity: item.quantity + 1} : item);
@@ -50,7 +50,7 @@ const App = () => {
           cartItemsPromise = deleteCartItems(id);
       }
       cartItemsPromise.then(response => {
-          let newCartItems: ItemType[] = [];
+          let newCartItems: ItemType[];
           if (response.items.length > 0) {
               newCartItems = response.items.reduce((curr: ItemType[], resItem: ItemType) => {
                   return curCartItems.map(item => {

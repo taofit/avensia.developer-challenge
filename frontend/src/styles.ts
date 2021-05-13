@@ -13,15 +13,14 @@ export const GlobalWrapper = styled.div`
 
 export const ItemWrapper = styled.div`
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
     width: 100%;
+    height: 100%;
     border: 1px solid grey;
     border-radius: 15px;
-    height: 100%;
     
     button {
-        border-radius: 0 15px;
+        border-radius: 0 0 15px 15px;
         background-color: lightGrey;
     }
     img {
@@ -64,8 +63,11 @@ export const CartItemWrapper = styled.div`
     .itemDetail, .itemButton {
         display: flex;
         justify-content: space-between;
-        Button {
+        button {
             background-color: lightGrey;
+        }        
+        button: hover {
+            background-color: lightslategrey;
         }
     }
     div {
