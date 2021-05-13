@@ -15,3 +15,8 @@ export type ItemType = {
     product: ProductType;
     quantity: number;
 }
+
+export type CartType = {
+    items: ItemType[];
+    summary: PriceType[];
+};

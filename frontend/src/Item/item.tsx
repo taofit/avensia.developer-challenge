@@ -1,6 +1,6 @@
 import Button from "@material-ui/core/Button";
 import { ProductType } from "../Types/types";
-import { Wrapper } from "../styles";
+import { ItemWrapper } from "../styles";
 
 type Props = {
     item: ProductType;
@@ -8,7 +8,7 @@ type Props = {
 };
 
 const Item: React.FC<Props> = ({item, addItemToCart}) => (
-    <Wrapper>
+    <ItemWrapper>
         <img src={item.imageUrl} alt={item.title}/>
         <div>
             <h4>{item.title}</h4>
@@ -17,7 +17,7 @@ const Item: React.FC<Props> = ({item, addItemToCart}) => (
             }
         </div>
         <Button onClick={() => addItemToCart(item)}>Add to cart</Button>
-    </Wrapper>
+    </ItemWrapper>
 );
 
 export default Item;

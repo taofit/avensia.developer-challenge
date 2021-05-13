@@ -1,8 +1,17 @@
 import styled from 'styled-components';
-import Button from '@material-ui/core/Button';
 import Badge from '@material-ui/core/Badge';
 
-export const Wrapper = styled.div`
+export const GlobalWrapper = styled.div`
+    margin: 30px;
+    #wrapperGrid {
+        margin-top: 10px;
+    }
+    Badge {
+        cursor: pointer;
+    }
+`;
+
+export const ItemWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -25,16 +34,6 @@ export const Wrapper = styled.div`
         font-family: Helvetica;
         padding: 10px;
         height: 100%;
-    }
-`;
-
-export const GlobalWrapper = styled.div`
-    margin: 30px;
-    #wrapperGrid {
-        margin-top: 10px;
-    }
-    Badge {
-        cursor: pointer;
     }
 `;
 

@@ -1,11 +1,11 @@
 import { CartWrapper, CartItemWrapper } from '../styles';
 import { ProductType, ItemType, PriceType } from '../Types/types';
-import Button from "@material-ui/core/Button";
+import Button from '@material-ui/core/Button';
 
 type Props = {
     items: ItemType[];
     addItem: (item: ProductType) => void;
-    removeItem: (id: number) => void;
+    removeItem: (id: number, curCartItems: ItemType[]) => void;
 }
 
 const getTotalPrice = (items: ItemType[]) => {
@@ -62,7 +62,7 @@ const Cart: React.FC<Props> = ({items, addItem, removeItem}) => {
                         </div>
                     </div>
                     <div className='itemButton'>
-                        <Button size='small' onClick={() => removeItem(item.product.id)}>-</Button>
+                        <Button size='small' onClick={() => removeItem(item.product.id, items)}>-</Button>
                         <span>{item.quantity}</span>
                         <Button size='small' onClick={() => addItem(item.product)}>+</Button>
                     </div>
