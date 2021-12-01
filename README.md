@@ -1,4 +1,4 @@
-# Avensia developer challenge
+# shopping cart challenge
 
 In this repository you'll find our developer challenges for frontend and backend. You may select whichever you wish, or do them both if that is what you prefer.
 
